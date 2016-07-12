@@ -17,6 +17,6 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./client_app/app:/opt/website/app
-      - ./client_app/specs:/opt/website/specs
-      - ./client_app/build:/opt/website/build
+      - ./client_app/app:/opt/client_app/app
+      - ./client_app/specs:/opt/client_app/specs
+      - ./client_app/build:/opt/client_app/build
