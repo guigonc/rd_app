@@ -1,0 +1,6 @@
+[submodule "client_app"]
+	path = client_app
+	url = https://github.com/guigonc/client_app.git
+[submodule "contact_tracker"]
+	path = contact_tracker
+	url = https://github.com/guigonc/contact_tracker.git

@@ -1,0 +1,22 @@
+version: '2'
+services:
+  db:
+    image: postgres
+  api:
+    build: ./contact_tracker
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - ./contact_tracker:/opt/contact_tracker
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+  client:
+    build: ./client_app
+    command: npm start
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./client_app/app:/opt/website/app
+      - ./client_app/specs:/opt/website/specs
+      - ./client_app/build:/opt/website/build
