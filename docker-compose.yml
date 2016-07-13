@@ -16,6 +16,7 @@ services:
     command: npm start
     volumes:
       - ./client_app/app:/opt/client_app/app
+      - ./client_app/lib:/opt/client_app/lib
       - ./client_app/specs:/opt/client_app/specs
       - ./client_app/build:/opt/client_app/build
     ports:
