@@ -14,9 +14,16 @@ services:
   client:
     build: ./client_app
     command: npm start
-    ports:
-      - "8080:8080"
     volumes:
       - ./client_app/app:/opt/client_app/app
       - ./client_app/specs:/opt/client_app/specs
       - ./client_app/build:/opt/client_app/build
+    ports:
+      - "8080:8080"
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+    depends_on:
+      - client
+      - api
