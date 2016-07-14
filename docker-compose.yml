@@ -14,8 +14,10 @@ services:
   client:
     build: ./client_app
     command: npm start
+    env_file: .env
     volumes:
       - ./client_app/app:/opt/client_app/app
+      - ./client_app/dist:/opt/client_app/dist
       - ./client_app/lib:/opt/client_app/lib
       - ./client_app/specs:/opt/client_app/specs
       - ./client_app/build:/opt/client_app/build
